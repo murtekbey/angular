@@ -12,7 +12,7 @@ export class CategoryService {
 
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(this.path).pipe( // pipe ile istersek hata yakalayabiliriz ya da loglama gibi başka işleri yapabiliriz.
-      tap(data => console.log(JSON.stringify(data))),
+      tap(), // data => console.log(JSON.stringify(data))
       catchError(this.handleError)
     );
   };
